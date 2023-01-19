@@ -4,8 +4,12 @@ function getComputerChoice() {
     return arrChoices[index];
 }
 
-const playerSelection = prompt("Enter your choice: rock, paper or scissors?");
-playerSelection = playerSelection.toLowerCase();
+function getPlayerChoice(){
+    let playerChoice = prompt("Enter your choice: rock, paper or scissors?");
+    playerChoice = playerChoice.toLowerCase();
+    return playerChoice;
+}
+
 
 const computerSelection = getComputerChoice();
 
