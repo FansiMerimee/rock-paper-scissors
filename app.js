@@ -48,5 +48,10 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-
+// Create function "game()" for a 5 round gameplay
+function game(){
+    for(let i = 1; i <= 5; i++ ){
+        playRound(playerSelection,computerSelection);
+    }
+}
 
