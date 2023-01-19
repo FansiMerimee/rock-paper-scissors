@@ -4,5 +4,10 @@ function getComputerChoice() {
     return arrChoices[index];
 }
 
-let ans = getComputerChoice();
-console.log(ans);
+const playerSelection = prompt("Enter your choice: rock, paper or scissors?");
+playerSelection = playerSelection.toLowerCase();
+
+const computerSelection = getComputerChoice();
+
+
+
