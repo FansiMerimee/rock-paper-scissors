@@ -6,12 +6,15 @@ function getComputerChoice() {
     return arrChoices[index];
 }
 
+const computerSelection = getComputerChoice();
+
 // Create a function to get the player's choice
-function getPlayerChoice(){
+/*function getPlayerChoice(){
     let playerChoice = prompt("Enter your choice: rock, paper or scissors?");
     playerChoice = playerChoice.toLowerCase();
     return playerChoice;
 }
+*/
 
 // Store the player selection and computer selection into a variable
 
@@ -58,7 +61,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // Create function "game()" for a 5 round gameplay
-function game(){
+/*function game(){
     for(let i = 1; i <= 5; i++ ){
         const computerSelection = getComputerChoice();
         const playerSelection = getPlayerChoice();
@@ -77,3 +80,4 @@ function game(){
 
 let result = game();
 console.log(result);
+*/
