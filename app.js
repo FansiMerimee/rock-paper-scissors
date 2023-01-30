@@ -27,14 +27,17 @@ function playRound(playerSelection, computerSelection) {
     }
     else if (playerSelection == "rock" && computerSelection == "paper") {
         computerCount++;
+        drawRound.textContent = "Paper covers Rock, You LOSE!";
         computer.textContent = computerCount;
     }
     else if (playerSelection == "rock" && computerSelection == "scissors") {
         playerCount++;
+        drawRound.textContent = "Rock breaks Scissors, You Win! ";
         player.textContent = playerCount;
     }
     else if (playerSelection == "paper" && computerSelection == "rock") {
         playerCount++;
+        drawRound.textContent = "Paper covers Rock, You Win! ";
         player.textContent = playerCount;
     }
     else if (playerSelection == "paper" && computerSelection == "paper") {
@@ -42,14 +45,17 @@ function playRound(playerSelection, computerSelection) {
     }
     else if (playerSelection == "paper" && computerSelection == "scissors") {
         computerCount++;
+        drawRound.textContent = "Scissors cuts Paper, You LOSE! ";
         computer.textContent = computerCount;
     }
     else if (playerSelection == "scissors" && computerSelection == "rock") {
         computerCount++;
+        drawRound.textContent = "Rock breaks Scissors, You LOSE!";
         computer.textContent = computerCount;
     }
     else if (playerSelection == "scissors" && computerSelection == "paper") {
         playerCount++;
+        drawRound.textContent = "Scissors cuts Paper, You WIN!";
         player.textContent = playerCount;
     }
     else if (playerSelection == "scissors" && computerSelection == "scissors") {
@@ -59,12 +65,28 @@ function playRound(playerSelection, computerSelection) {
 
 let buttons = document.querySelectorAll("button");
 
+
 buttons.forEach(button => button.addEventListener("click", (e)=> {
     const playerSelection = e.target.textContent.toLowerCase();
     // Store Computer choice in variable computerSelection
     const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
+    if(playerCount < 5 && computerCount < 5){
+        playRound(playerSelection, computerSelection);
+    } 
+    
+    if (computerCount == 5){
+        e.target.disabled = true;
+        drawRound.textContent = "COMPUTER WINS!";
+        drawRound.style.color = "red";
+    }
+    else if (playerCount == 5){
+        e.target.disabled = true;
+        drawRound.textContent = "PLAYER WINS!";
+        drawRound.style.color = "green";
+    }  
+    
 }));
+
 
 
 
@@ -76,13 +98,7 @@ buttons.forEach(button => button.addEventListener("click", (e)=> {
         playRound(playerSelection,computerSelection);
     }
 
-    if(playerWin > computerWin){
-        console.log("Congratulations!!! You are th final Winner.");
-    } else if (playerWin < computerWin){
-        console.log("Game Over! Computer Wins.");
-    } else {
-        console.log("Draw Game!");
-   }
+   
 
 }
 
